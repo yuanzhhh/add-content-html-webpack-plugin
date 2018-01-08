@@ -10,22 +10,22 @@ const defaultOpt = {
   babelpath: null,
 }
 
-function HtmlSetContent(options) {
+function AddContentHtml(options) {
   Object.assign(this, defaultOpt, options);
 }
 
-HtmlSetContent.prototype.intype = {
+AddContentHtml.prototype.intype = {
   '.js': 'script',
   '.css': 'style'
 }
 
-HtmlSetContent.prototype.mergeText = (inject, html, content, intype) => {
+AddContentHtml.prototype.mergeText = (inject, html, content, intype) => {
   const result = new RegExp(`</${inject}>`, 'g');
 
   return html.replace(result, `<${intype}>${content}</${intype}></${inject}>`);
 }
 
-HtmlSetContent.prototype.uglifyWith = {
+AddContentHtml.prototype.uglifyWith = {
   '.js' (text) {
     const babelCode = babel.transform(text, {
       extends: this.babelpath,
@@ -39,7 +39,7 @@ HtmlSetContent.prototype.uglifyWith = {
   },
 }
 
-HtmlSetContent.prototype.merges = function (html, text) {
+AddContentHtml.prototype.merges = function (html, text) {
   let content = text;
 
   const extname = path.extname(this.filepath);
@@ -53,7 +53,7 @@ HtmlSetContent.prototype.merges = function (html, text) {
   return this.mergeText(this.inject, html, content, intype);
 };
 
-HtmlSetContent.prototype.apply = function (compiler) {
+AddContentHtml.prototype.apply = function (compiler) {
   compiler.plugin('compilation', compilation => {
     compilation.plugin('html-webpack-plugin-before-html-processing', (htmlPluginData, callback) => {
       fs.readFile(this.filepath, 'utf8', (err, data) => {
@@ -67,4 +67,4 @@ HtmlSetContent.prototype.apply = function (compiler) {
   });
 };
 
-module.exports = HtmlSetContent;
+module.exports = AddContentHtml;
