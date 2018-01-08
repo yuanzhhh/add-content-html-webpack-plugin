@@ -1,6 +1,6 @@
 {
   "name": "add-content-html-webpack-plugin",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Add file content to a generated HTML file",
   "main": "index.js",
   "scripts": {
