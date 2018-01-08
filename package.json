@@ -1,0 +1,24 @@
+{
+  "name": "add-content-html-webpack-plugin",
+  "version": "0.1.0",
+  "description": "Add file content to a generated HTML file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["html", "html-webpack-plugin", "webpack"],
+  "author": "Evan Yuan <evan.yuanzh@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "6.26.0",
+    "uglify-js": "3.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuanzhhh/add-content-html-webpack-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yuanzhhh/add-content-html-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/yuanzhhh/add-content-html-webpack-plugin"
+}
