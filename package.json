@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["html", "html-webpack-plugin", "webpack"],
+  "keywords": [
+    "html",
+    "html-webpack-plugin",
+    "webpack"
+  ],
   "author": "Evan Yuan <evan.yuanzh@gmail.com>",
   "license": "MIT",
   "dependencies": {
